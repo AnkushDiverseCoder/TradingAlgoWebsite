@@ -89,18 +89,18 @@ const Faq = () => {
 
 export default Faq;
 
-const AccordionItem = ({ header, text }) => {
+const AccordionItem = ({ header, text }: { header: string; text: string }) => {
     const [active, setActive] = useState(false);
 
-    const handleToggle = () => {
-        event.preventDefault();
+    const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         setActive(!active);
     };
     return (
         <div className="mb-8 w-full rounded-lg bg-white p-4 shadow-[0px_20px_95px_0px_rgba(201,203,204,0.30)] dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)] sm:p-8 lg:px-6 xl:px-8">
             <button
                 className={`faq-btn flex w-full text-left`}
-                onClick={() => handleToggle()}
+                onClick={(e) => handleToggle(e)}
             >
                 <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary/5 text-primary dark:bg-white/5">
                     <svg
